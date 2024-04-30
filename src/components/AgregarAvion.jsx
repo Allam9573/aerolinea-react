@@ -3,20 +3,19 @@ import AvionService from "../services/AvionService"
 import { useNavigate } from "react-router-dom"
 
 export const AgregarAvion = () => {
-
-    const [marca, setMarca] = useState('')
-    const [asientosPrimeraClase, setPrimeraClase] = useState('')
-    const [asientosPremium, setPremium] = useState('')
-    const [asientosBasico, setBasico] = useState('')
+    const [nombre, setNombre] = useState('')
+    const [modelo, setModelo] = useState('')
+    const [capacidad, setCapacidad] = useState('')
+    const [fabricante, setFabricante] = useState('')
     const navigate = useNavigate()
 
     const agregarAvion = e => {
         e.preventDefault()
         const avion = {
-            marca,
-            asientosPrimeraClase,
-            asientosPremium,
-            asientosBasico
+            nombre,
+            modelo,
+            capacidad,
+            fabricante
         }
         AvionService.agregarAvion(avion).then(response => {
             navigate('/aviones')
@@ -30,16 +29,16 @@ export const AgregarAvion = () => {
                 <h3 className="mb-3">Nuevo Avion</h3>
                 <form onSubmit={agregarAvion}>
                     <div className="input-group mb-3">
-                        <input type="text" placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} className="form-control" />
+                        <input type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} className="form-control" />
                     </div>
                     <div className="input-group mb-3">
-                        <input type="text" placeholder="Primera clase" value={asientosPrimeraClase} onChange={e => setPrimeraClase(e.target.value)} className="form-control" />
+                        <input type="text" placeholder="Modelo" value={modelo} onChange={e => setModelo(e.target.value)} className="form-control" />
                     </div>
                     <div className="input-group mb-3">
-                        <input type="text" placeholder="Premuim" value={asientosPremium} onChange={e => setPremium(e.target.value)} className="form-control" />
+                        <input type="text" placeholder="Capacidad" value={capacidad} onChange={e => setCapacidad(e.target.value)} className="form-control" />
                     </div>
                     <div className="input-group mb-3">
-                        <input type="text" placeholder="Basico" value={asientosBasico} onChange={e => setBasico(e.target.value)} className="form-control" />
+                        <input type="text" placeholder="Fabricante" value={fabricante} onChange={e => setFabricante(e.target.value)} className="form-control" />
                     </div>
                     <div className="input-group">
                         <input type="submit" value="Agregar Avion" className="btn btn-primary w-100" />

@@ -12,7 +12,6 @@ function App() {
       <div>
         <BrowserRouter>
           <Navbar />
-          <Content />
           <Routes>
             <Route exact path='/aviones' element={<Aviones />} ></Route>
             <Route exact path='/nuevo-avion' element={<AgregarAvion />} ></Route>

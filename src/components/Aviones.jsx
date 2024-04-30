@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import AvionService from "../services/AvionService";
-import Logo from '../assets/images/logo.png'
 
 export const Aviones = () => {
     const [aviones, setAviones] = useState([])
@@ -14,12 +13,18 @@ export const Aviones = () => {
     return (
         <>
             <h3>Lista de aviones:</h3>
-            {
-                aviones.map(
-                    avion =>
-                        <p key={avion.idAvion}>{avion.idAvion} - {avion.marca}</p>
-                )
-            }
+            <div className="d-flex justify-content-center align-items-center flex-wrap">
+                {
+                    aviones.map(
+                        avion =>
+                            <div className="card p-5 m-3">
+                                <h4>Aeronave: {avion.fabricante} - {avion.modelo}</h4>
+                                <h5>Capacidad: {avion.capacidad} </h5>
+                            </div>
+                    )
+                }
+            </div>
+
         </>
     )
 }

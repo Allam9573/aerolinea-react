@@ -21,11 +21,11 @@ export const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="btn btn-outline-primary rounded-pill text-white border-0 me-3"
-                                    href="{{ route('destinos') }}">Destinos</a>
+                                    href="/aviones">Aviones</a>
                             </li>
                             <li className="nav-item">
                                 <a className="btn btn-outline-primary rounded-pill text-white border-0 me-3"
-                                    href="">Precios</a>
+                                    href="/nuevo-avion">Nuevo Avion</a>
                             </li>
                             <li className="nav-item">
                                 <a className="btn btn-outline-primary rounded-pill text-white border-0 me-3" href="/">Comprar
